@@ -11,7 +11,9 @@ import {EditPageComponent} from './edit-page/edit-page.component';
 import {AuthService} from './shared/services/auth.service'
 import {SharedModule} from '../shared/shared.module'
 import {AuthGuard} from './shared/services/auth-guard'
-import { SearchPipe } from './shared/pipes/search.pipe'
+import { SearchPipe } from './shared/pipes/search.pipe';
+import { AlertComponent } from './shared/components/alert/alert.component'
+import { AlertService } from './shared/services/alert.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { SearchPipe } from './shared/pipes/search.pipe'
     DashboardPageComponent,
     CreatePageComponent,
     EditPageComponent,
-    SearchPipe
+    SearchPipe,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,7 @@ import { SearchPipe } from './shared/pipes/search.pipe'
       }
     ])
   ],
-  providers:[AuthService, AuthGuard],
+  providers:[AuthService, AuthGuard, AlertService],
   exports: [RouterModule]
 })
 export class AdminModule {
